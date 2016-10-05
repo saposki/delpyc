@@ -7,14 +7,19 @@ filename = argv[1]
 fp = open(filename)
 
 L = fp.readlines()
+
 a = []
 b = []
 
 for k in L:
-     a.append(k.split(' '))
+    check = len(k)
+    if check > 1:
+        a.append(k.split(' '))
+    #  print k
 
 for i in a:
     for j in i:
         b.append(j)
-print "Line count -> %r" %(len(L))
+
+print "Line count -> %r" %(len(a))
 print "Word count -> %r" %(len(b))
